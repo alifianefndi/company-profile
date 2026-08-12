@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, PT_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/Footer";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -37,8 +39,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "antialiased",
       )}
     >
-      <body className="min-h-full flex flex-col">
-        <main>{children}</main>
+      <body className="min-h-full flex flex-col items-center">
+        <Navbar />
+      
+        <main className="flex flex-col items-center w-full max-w-7xl overflow-x-hidden">
+          {children}
+        </main>
+      
+        <Footer />
       </body>
     </html>
   );
