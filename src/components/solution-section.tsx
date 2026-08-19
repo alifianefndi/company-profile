@@ -1,23 +1,32 @@
 import { solutionContent } from "@/utils/content";
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ScrollReveal } from "./scroll-reveal";
 
 export function SolutionSection() {
   return (
-      <section
-        id="solutions"
-        className="flex flex-col items-center w-full px-4 py-8 gap-6 md:px-8 md:py-16"
-      >
+    <section
+      id="solutions"
+      className="flex flex-col items-center w-full px-4 py-8 gap-6 md:px-8 md:py-16"
+    >
+      <ScrollReveal>
         <h1 className="text-2xl lg:text-3xl font-bold">Our Solutions</h1>
+      </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-6 w-full md:grid-cols-2 lg:grid-cols-3">
-          {solutionContent.map((s) => (
-            <Card
-              key={s.title}
-              className="w-full bg-background border shadow-xs"
-            >
+      <div className="grid grid-cols-1 gap-6 w-full md:grid-cols-2 lg:grid-cols-3">
+        {solutionContent.map((s, i) => (
+          <ScrollReveal key={s.title} direction="fade-up" delay={0.2 + i * 0.1}>
+            <Card className="w-full bg-background border shadow-xs">
               <CardHeader>
                 <div className="flex justify-center items-center w-14 aspect-square bg-muted rounded-md">
                   <Image
@@ -56,9 +65,9 @@ export function SolutionSection() {
                 </CardAction>
               </CardFooter>
             </Card>
-          ))}
-        </div>
-      </section>
-
-  )
+          </ScrollReveal>
+        ))}
+      </div>
+    </section>
+  );
 }

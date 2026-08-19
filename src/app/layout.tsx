@@ -41,11 +41,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col items-center">
         <Navbar />
-      
+
         <main className="flex flex-col items-center w-full max-w-7xl overflow-x-hidden">
           {children}
         </main>
-      
+
         <Footer />
       </body>
     </html>

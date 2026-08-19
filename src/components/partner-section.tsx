@@ -1,15 +1,19 @@
 import Image from "next/image";
 import { Marquee } from "./ui/marquee";
 import { partnersContent } from "@/utils/content";
+import { ScrollReveal } from "./scroll-reveal";
 
 export function PartnerSection() {
   return (
-      <section
-        id="partners"
-        className="flex flex-col items-center py-4 gap-4 overflow-x-hidden"
-      >
+    <section
+      id="partners"
+      className="flex flex-col items-center py-4 gap-4 overflow-x-hidden"
+    >
+      <ScrollReveal>
         <h1 className="text-2xl lg:text-3xl font-bold">Our Partners</h1>
+      </ScrollReveal>
 
+      <ScrollReveal delay={0.2}>
         <Marquee className="gap-5" pauseOnHover={true}>
           {partnersContent.map((partner) => (
             <div
@@ -26,6 +30,7 @@ export function PartnerSection() {
             </div>
           ))}
         </Marquee>
-      </section>
-  )
+      </ScrollReveal>
+    </section>
+  );
 }

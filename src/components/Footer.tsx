@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react'
-import { Separator } from './ui/separator';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { Separator } from "./ui/separator";
 
 export function Footer() {
   return (
@@ -18,7 +18,7 @@ export function Footer() {
                 className="w-10 md:w-12"
               />
 
-              <h3 className="mt-2">PT. Teman Berkah Sentosa</h3>
+              <h3 className="mt-2 text-lg">PT. Teman Berkah Sentosa</h3>
             </div>
 
             <p className="text-sm">

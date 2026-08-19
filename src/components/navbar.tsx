@@ -32,16 +32,20 @@ export function Navbar() {
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
-    }
+    };
 
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.addEventListener("mousedown", handleClickOutside);
-    }
+    };
   }, [isOpen]);
 
   return (
